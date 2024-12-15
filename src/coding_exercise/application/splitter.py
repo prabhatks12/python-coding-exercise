@@ -22,7 +22,7 @@ class Splitter:
 
     def _set_cable_name(self, index:int, cable_name:str) -> str:
         """
-        Cable name's should be of the form "name-00", "name-01" .. "name-10", "name-11"..
+        Cable's name should be of the form "name-00", "name-01" .. "name-10", "name-11"..
         """
         if index > 9:
             return cable_name + "-" + str(index)
@@ -31,6 +31,9 @@ class Splitter:
 
 
     def split(self, cable: Cable, times: int) -> list[Cable]:
+        """
+        Splitting the cable based on split times
+        """
         self.__validate(cable.length, times)
         max_split_len = cable.length//(times+1)
         remaining_cable = cable.length

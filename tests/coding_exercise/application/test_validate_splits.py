@@ -16,6 +16,11 @@ def test_validate_split_len():
     assert len(cables) == len(valid_split)
     assert [cable.length for cable in cables] == valid_split
 
+    cables = Splitter().split(Cable(10, "coconuts"), 1)
+    valid_split = [5,5]
+    assert len(cables) == len(valid_split)
+    assert [cable.length for cable in cables] == valid_split
+
     cables = Splitter().split(Cable(11, "coconuts"), 3)
     valid_split = [2,2,2,2,2,1]
     assert len(cables) == len(valid_split)
