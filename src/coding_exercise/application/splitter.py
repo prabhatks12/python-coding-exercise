@@ -5,24 +5,14 @@ class Splitter:
 
     def __validate(self, len_cable:int, times:int) -> bool:
         """
-        TODO 
-        1. check if possible to split
-            cond :
-                1. splits < len(cable)
-        2. 
-            times:
-                minimum: 1
-                maximum: 64
-            length:
-                minimum: 2
-                maximum: 1024
-
         """
         # constraints check
         if len_cable >=2 and len_cable <=1024 and times >=1 and times <=64:
             # condition check
             if len_cable > times:
                 return True
+            else:
+                raise ValueError
         else:
             raise ValueError
 
